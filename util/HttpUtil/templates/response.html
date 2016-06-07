@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleHttpServer</title>
+</head>
+<body>
+    <h2>Response for {{method}} Request</h2>
+
+    <h3>Header:</h3>
+    {% for header in headers %}
+        <p>{{header}}</p>
+    {% endfor %}
+
+    {% if args %}
+        <h3>Params:</h3>
+        {% for key,value in args.items() %}
+            <p>{{key}} : {{value}}</p>
+        {% endfor %}
+    {% endif %}
+
+    {% if body %}
+        <h3>Body:</h3>
+        {% for key,value in body.items() %}
+            <p>{{key}} : {{value}}</p>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
